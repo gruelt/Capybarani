@@ -18,10 +18,14 @@ func _physics_process(delta):
 	# 1. Gestion de la Gravité
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		#velocity.x = 0
 	
 	# 2. Gestion du Saut et du Timing
 	if is_on_floor():
+		print(rotation_degrees)
+		velocity.x = rotation_degrees  *2
 		if Input.is_action_pressed("jump"): # "Espace" par défaut
+			
 			# Saut boosté si on appuie pile au contact
 			if jump_force > -200  :
 				jump_force= -300

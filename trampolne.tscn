@@ -3,14 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://di0h504740rm2" path="res://assets/sprites/trampoline.jpeg" id="1_wtjy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtjy5"]
-size = Vector2(253, 131)
+size = Vector2(898, 131)
 
 [node name="Trampolne" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(552, 622)
+position = Vector2(615.5, 622)
+scale = Vector2(3.4562044, 1)
 texture = ExtResource("1_wtjy5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(554.5, 644.5)
+position = Vector2(614, 644.5)
 shape = SubResource("RectangleShape2D_wtjy5")
