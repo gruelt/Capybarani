@@ -7,6 +7,7 @@ var boost_factor = 1.1  # Multiplicateur si on saute au bon moment
 
 # Variables de rotation
 var rotation_speed = 5.0
+var lateral_push = 400
 var tucked_multiplier = 2.5 # Vitesse de rotation quand on est "groupé"
 
 func start(pos):
@@ -17,13 +18,18 @@ func start(pos):
 func _physics_process(delta):
 	# 1. Gestion de la Gravité
 	if not is_on_floor():
+		
 		velocity.y += gravity * delta
 		#velocity.x = 0
 	
 	# 2. Gestion du Saut et du Timing
 	if is_on_floor():
+		var bounce_direction = sin(rotation)
+		print(bounce_direction)
+		# On applique la vélocité horizontale
+		velocity.x = bounce_direction * lateral_push
 		print(rotation_degrees)
-		velocity.x = rotation_degrees  *2
+		#velocity.x = rotation_degrees  *2
 		if Input.is_action_pressed("jump"): # "Espace" par défaut
 			
 			# Saut boosté si on appuie pile au contact
