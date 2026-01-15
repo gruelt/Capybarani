@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Variables de mouvement
 var gravity = 900
 var jump_force = -500
-var boost_factor = 1.5  # Multiplicateur si on saute au bon moment
+var boost_factor = 1.1  # Multiplicateur si on saute au bon moment
 
 # Variables de rotation
 var rotation_speed = 5.0
@@ -23,9 +23,13 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_pressed("jump"): # "Espace" par défaut
 			# Saut boosté si on appuie pile au contact
+			if jump_force > -200  :
+				jump_force= -300
+			jump_force *= boost_factor 
 			velocity.y = jump_force * boost_factor
 		else:
 			# Saut automatique normal au contact du trampoline
+			jump_force /= boost_factor 
 			velocity.y = jump_force
 
 	# 3. Gestion des Rotations et du mode "Groupé"
