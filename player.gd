@@ -31,12 +31,12 @@ func _physics_process(delta):
 	# 3. Gestion des Rotations et du mode "Groupé"
 	var current_rot_speed = rotation_speed
 	
+	$AnimatedSprite2D.animation = "jump"
+	
 	# Si on appuie sur "Bas", on tourne plus vite
 	if Input.is_action_pressed("group"):
 		current_rot_speed *= tucked_multiplier
-		scale = Vector2(0.7, 0.7) # Effet visuel "groupé"
-	else:
-		scale = Vector2(1, 1) # Taille normale
+		$AnimatedSprite2D.animation = "groupe"
 
 	# Rotation gauche/droite
 	if Input.is_action_pressed("left"):
