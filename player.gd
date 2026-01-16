@@ -27,7 +27,7 @@ func _physics_process(delta):
 		var bounce_direction = sin(rotation)
 		print(bounce_direction)
 		# On applique la vélocité horizontale
-		velocity.x = bounce_direction * lateral_push
+		velocity.x = (velocity.x/2 ) + bounce_direction * lateral_push
 		print(rotation_degrees)
 		#velocity.x = rotation_degrees  *2
 		if Input.is_action_pressed("jump"): # "Espace" par défaut

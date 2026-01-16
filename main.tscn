@@ -1,11 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqh6ga1jk2hta"]
+[gd_scene load_steps=5 format=3 uid="uid://dqh6ga1jk2hta"]
 
 [ext_resource type="PackedScene" uid="uid://c1ed4ywvomkp0" path="res://player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://b23strkfl5u60" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://6ktd3ko3xfq5" path="res://assets/images/background.webp" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dfbmec7ed010o" path="res://trampolne.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -106.0
+offset_top = -886.0
+offset_right = 1310.0
+offset_bottom = 836.0
+texture = ExtResource("2_1bvp3")
 
 [node name="Trampolne" parent="." instance=ExtResource("2_h2yge")]
 

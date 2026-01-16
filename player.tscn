@@ -39,3 +39,5 @@ rotation = -0.61086524
 scale = Vector2(0.19803922, 0.20185184)
 sprite_frames = SubResource("SpriteFrames_sweqy")
 animation = &"jump"
+
+[node name="Camera2D" type="Camera2D" parent="."]
